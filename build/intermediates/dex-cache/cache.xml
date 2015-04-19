@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/sarahchristina/AndroidStudioProjects/motion-master/app/libs/achartengine-1.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b2bb0af9f390c0edd4d7d95f613f38da3abe0144">
+        <dex dex="/Users/sarahchristina/AndroidStudioProjects/motion-master/app/build/intermediates/pre-dexed/debug/achartengine-1.0.0-6eee6e64860752244fe177834f53cf8671b16194.jar" />
+    </item>
+    <item
+        jar="/Users/sarahchristina/Library/Android/sdk/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
+        <dex dex="/Users/sarahchristina/AndroidStudioProjects/motion-master/app/build/intermediates/pre-dexed/debug/support-v4-19.1.0-34567f78e3e1544ccfd348c4d9b6ab4956a45ace.jar" />
+    </item>
+
+</items>
