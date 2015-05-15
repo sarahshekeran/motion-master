@@ -11,12 +11,16 @@ import org.achartengine.renderer.XYSeriesRenderer;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -25,7 +29,7 @@ import android.widget.LinearLayout;
 
 public class GraphActivity extends Activity implements SensorEventListener,OnClickListener {
     private SensorManager sensorManager;
-    private Button btnStart, btnStop, btnUpload;
+    private Button btnStart, btnStop;
     private boolean started = false;
     private ArrayList<AccelData> sensorData;
     private LinearLayout layout;
@@ -41,15 +45,10 @@ public class GraphActivity extends Activity implements SensorEventListener,OnCli
 
         btnStart = (Button) findViewById(R.id.btnStart);
         btnStop = (Button) findViewById(R.id.btnStop);
-        btnUpload = (Button) findViewById(R.id.btnUpload);
         btnStart.setOnClickListener(this);
         btnStop.setOnClickListener(this);
-        btnUpload.setOnClickListener(this);
         btnStart.setEnabled(true);
         btnStop.setEnabled(false);
-        if (sensorData == null || sensorData.size() == 0) {
-            btnUpload.setEnabled(false);
-        }
 
     }
 
@@ -91,7 +90,6 @@ public class GraphActivity extends Activity implements SensorEventListener,OnCli
             case R.id.btnStart:
                 btnStart.setEnabled(false);
                 btnStop.setEnabled(true);
-                btnUpload.setEnabled(false);
                 sensorData = new ArrayList<AccelData>();
                 // save prev data if available
                 started = true;
@@ -103,16 +101,12 @@ public class GraphActivity extends Activity implements SensorEventListener,OnCli
             case R.id.btnStop:
                 btnStart.setEnabled(true);
                 btnStop.setEnabled(false);
-                btnUpload.setEnabled(true);
                 started = false;
                 sensorManager.unregisterListener(this);
                 layout.removeAllViews();
                 openChart();
 
                 // show data in chart
-                break;
-            case R.id.btnUpload:
-
                 break;
             default:
                 break;
@@ -167,6 +161,7 @@ public class GraphActivity extends Activity implements SensorEventListener,OnCli
             multiRenderer.setXTitle("Sensor Data");
             multiRenderer.setYTitle("Values of Acceleration");
             multiRenderer.setZoomButtonsVisible(true);
+            multiRenderer.setMarginsColor(Color.argb(0x00, 0xff, 0x00, 0x00));
             for (int i = 0; i < sensorData.size(); i++) {
 
                 multiRenderer.addXTextLabel(i + 1, ""

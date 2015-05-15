@@ -22,8 +22,9 @@ import android.annotation.TargetApi;
 import android.widget.TextView;
 import android.widget.Button;
 import android.widget.Toast;
-
-import java.util.HashMap;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 @TargetApi(Build.VERSION_CODES.GINGERBREAD)
 @SuppressLint("NewApi")
@@ -52,8 +53,8 @@ public class motion extends Activity implements SensorEventListener {
     public Vibrator v;
 
     final CounterClass timer = new CounterClass(15000,50);
-    float res[]= new float[300];
-    int i=0;
+    float res[];
+    int i;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -97,6 +98,8 @@ public class motion extends Activity implements SensorEventListener {
 
         //initialize vibration
         v = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
+        res= new float[300];
+        i=0;
         btnstart.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -116,6 +119,25 @@ public class motion extends Activity implements SensorEventListener {
 
     }
 
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu items for use in the action bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_graph, menu);
+        return super.onCreateOptionsMenu(menu);
+
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                Intent INT1=new Intent(motion.this,AboutProject.class);
+                startActivity(INT1);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
 
     public void initializeViews() {
@@ -324,6 +346,10 @@ public class motion extends Activity implements SensorEventListener {
             else
                 result.setText("WALKING");
 
+            //to reset the application
+            res= new float[300];
+            i=0;
+            vibrateCounter = 0;
         }
 
 

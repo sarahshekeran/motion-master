@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="#FFFFFF"
+    android:background="@drawable/bg"
     android:gravity="center"
     android:orientation="vertical"
     android:paddingTop="0dp"
@@ -17,7 +17,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="0dp"
         android:layout_marginBottom="20dp"
-        android:textColor="#56A6FF"
+        android:textColor="#ff8100"
         android:textStyle="bold"
         android:text="Determine your Activity!"
         android:textSize="31dp" />
@@ -26,7 +26,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="49dp"
-        android:background="#FFFFFF"
+        android:background="#00000000"
         android:gravity="center|top"
         android:orientation="horizontal" >
 
@@ -34,7 +34,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.33"
-            android:background="#FFFFFF"
+            android:background="#00000000"
             android:gravity="center"
             android:orientation="vertical" >
 
@@ -60,7 +60,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.33"
-            android:background="#FFFFFF"
+            android:background="#00000000"
             android:gravity="center"
             android:orientation="vertical" >
 
@@ -86,7 +86,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.33"
-            android:background="#FFFFFF"
+            android:background="#00000000"
             android:gravity="center"
             android:orientation="vertical" >
 
@@ -120,7 +120,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="49dp"
-        android:background="#FFFFFF"
+        android:background="#00000000"
         android:gravity="center|top"
         android:orientation="horizontal" >
 
@@ -128,7 +128,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.33"
-            android:background="#FFFFFF"
+            android:background="#00000000"
             android:gravity="center"
             android:orientation="vertical" >
 
@@ -154,7 +154,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.33"
-            android:background="#FFFFFF"
+            android:background="#00000000"
             android:gravity="center"
             android:orientation="vertical" >
 
@@ -180,7 +180,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.33"
-            android:background="#FFFFFF"
+            android:background="#00000000"
             android:gravity="center"
             android:orientation="vertical" >
 
@@ -210,8 +210,8 @@
         android:layout_gravity="center"
         android:layout_marginBottom="20dp"
         android:layout_marginTop="20dp"
-        android:background="#56A6FF"
-        android:text="Start:"
+        android:background="#ff8100"
+        android:text="Start"
         android:textSize="15dp" />
 
     <TextView
@@ -220,7 +220,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="5dp"
-        android:textColor="#56A6FF"
+        android:textColor="#ff8100"
         android:textStyle="bold"
         android:text="Activity"
         android:textSize="35dp"
@@ -232,8 +232,8 @@
         android:layout_gravity="center"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="20dp"
-        android:background="#56A6FF"
-        android:text="Display Graph"
-        android:textSize="15dp" />
+        android:background="#ff8100"
+        android:text="Graphical Analysis"
+        android:textSize="15dp"/>
 
 </LinearLayout>
